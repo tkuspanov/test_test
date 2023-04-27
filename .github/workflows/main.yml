@@ -47,4 +47,4 @@ jobs:
       run: sudo apt-get install sshpass -y
 
     - name: Deploy to server
-      run: sshpass -p The2ndlaw ssh clevtech@193.106.99.68 -p54337 "cd /home/clevtech/Documents/contest/test_test; git pull; docker-compose up down; docker-compose up -d --build"
+      run: sshpass -p The2ndlaw ssh clevtech@193.106.99.68 -p54337 cd /home/clevtech/Documents/contest/test_test; git pull; docker-compose up down; docker-compose up -d --build
