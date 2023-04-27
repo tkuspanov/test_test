@@ -36,7 +36,7 @@ jobs:
         user: clevtech
 #        public_key: ${{secrets.SSH_PUBLIC_KEY}}
 #        private_key: ${{secrets.SSH_PRIVATE_KEY}}
-        password: The2ndlaw
+        password: ${{secrets.SSH_PASSWORD}}
         port: 54337
         command: |
           cd /home/clevtech/Documents/contest/test_test;
