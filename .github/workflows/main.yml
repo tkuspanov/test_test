@@ -35,7 +35,8 @@ jobs:
         host: ${{secrets.SSH_HOST}}
         user: ${{secrets.SSH_USER}}
 #        public_key: ${{secrets.SSH_PUBLIC_KEY}}
-        private_key: ${{secrets.SSH_PRIVATE_KEY}}
+#        private_key: ${{secrets.SSH_PRIVATE_KEY}}
+        password: ${{secrets.SSH_PASSWORD}}
         port: ${{ secrets.SERVER_PORT }}
         command: |
           cd /home/clevtech/Documents/contest/test_test;
