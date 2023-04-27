@@ -32,7 +32,7 @@ jobs:
     - name: Deploy to server
       uses: appleboy/ssh-action@v0.1.10
       with:
-        host: ${{secrets.SSH_HOST}}
+        host: 193.106.99.68
         user: ${{secrets.SSH_USER}}
 #        public_key: ${{secrets.SSH_PUBLIC_KEY}}
 #        private_key: ${{secrets.SSH_PRIVATE_KEY}}
