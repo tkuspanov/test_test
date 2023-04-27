@@ -29,14 +29,12 @@ jobs:
     - name: Install dependencies
       run: pip install --no-cache-dir -r ./requirements.txt
     
-    - name: Install sshpass
-      run: sudo apt-get install sshpass -y
-
     - name: Deploy to server
       uses: D3rHase/ssh-command-action@v0.2.2
       with:
         host: ${{secrets.SSH_HOST}}
         user: ${{secrets.SSH_USER}}
+        public_key: ${{secrets.SSH_PUBLIC_KEY}}
         private_key: ${{secrets.SSH_PRIVATE_KEY}}
         port: ${{ secrets.SERVER_PORT }}
         command: |
