@@ -33,5 +33,14 @@ jobs:
       run: sudo apt-get install sshpass -y
 
     - name: Deploy to server
-      run: 
-        sshpass -p "The2ndlaw" ssh clevtech@193.106.99.68 -p 54337 "cd /home/clevtech/Documents/contest/test_test; git pull; docker compose down; docker compose up -d --build"
+      uses: D3rHase/ssh-command-action@v0.2.2
+      with:
+        host: ${{secrets.SSH_HOST}}
+        user: ${{secrets.SSH_USER}}
+        private_key: ${{secrets.SSH_PRIVATE_KEY}}
+        port: ${{ secrets.SERVER_PORT }}
+        command: |
+          cd /home/clevtech/Documents/contest/test_test;
+          git pull;
+          docker-compose up down;
+          docker-compose up -d --build;
